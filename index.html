@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>தமிழ்நாடு இ-சேவை வழிகாட்டி | ஆவணங்கள், கட்டணம் & நேரம் — முழுமையான பட்டியல்</title>
+<meta name="description" content="தமிழ்நாடு இ-சேவை மற்றும் மின்-மாவட்ட சான்றிதழ்களுக்கான தேவையான ஆவணங்கள், அரசு கட்டணம், செயலாக்க நேரம் — 37 சேவைகளுக்கான முழுமையான வழிகாட்டி.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===================== TOKENS ===================== */
+:root{
+  --navy:#1E3A8A;
+  --navy-deep:#101e4d;
+  --navy-mid:#1d2f6e;
+  --emerald:#059669;
+  --emerald-soft:#ecfdf5;
+  --amber:#D97706;
+  --amber-soft:#fffbeb;
+  --ink:#16213E;
+  --ink-soft:#4a5573;
+  --paper:#FAF8F3;
+  --paper-deep:#F1EDE3;
+  --line:#E7E2D6;
+  --white:#FFFFFF;
+  --radius:18px;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth; overflow-x:hidden;}
+body{
+  margin:0;
+  font-family:'Noto Sans Tamil',sans-serif;
+  background:var(--white);
+  color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+.font-mono{font-family:'JetBrains Mono',monospace;}
+ul,p,h1,h2{margin:0;}
+ul{padding:0;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;cursor:pointer;}
+input{font-family:inherit;}
+
+::selection{background:var(--amber);color:#fff;}
+
+a:focus-visible, button:focus-visible, input:focus-visible{
+  outline:2.5px solid var(--navy);
+  outline-offset:3px;
+  border-radius:4px;
+}
+
+::-webkit-scrollbar{width:11px;height:11px;}
+::-webkit-scrollbar-track{background:var(--paper);}
+::-webkit-scrollbar-thumb{background:#D8CFBC;border-radius:8px;border:2px solid var(--paper);}
+::-webkit-scrollbar-thumb:hover{background:#BFB39A;}
+
+.skip-link{
+  position:absolute; left:-999px; top:0;
+  background:var(--navy); color:#fff; padding:10px 18px; z-index:200;
+  font-size:14px; font-weight:600; border-radius:0 0 8px 0;
+}
+.skip-link:focus{left:0; top:0;}
+
+/* ===================== LAYOUT PRIMITIVES ===================== */
+.wrap{max-width:1280px; margin:0 auto; padding:0 20px;}
+.hide{display:none !important;}
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);}
+
+/* ===================== HEADER ===================== */
+.site-header{
+  position:sticky; top:0; z-index:50;
+  background:rgba(255,255,255,0.92);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{
+  display:flex; align-items:center; gap:18px;
+  padding:14px 0;
+  flex-wrap:nowrap;
+}
+.brand{display:flex; align-items:center; gap:11px; flex-shrink:0; min-width:0;}
+.brand-mark{
+  width:42px; height:42px; border-radius:11px;
+  background:linear-gradient(155deg, var(--navy) 0%, var(--navy-deep) 100%);
+  display:flex; align-items:center; justify-content:center;
+  color:#fff; font-weight:800; font-size:16px;
+  box-shadow:0 4px 14px -4px rgba(16,30,77,0.45);
+  flex-shrink:0;
+}
+.brand-text p{line-height:1.25;}
+.brand-title{font-weight:800; font-size:17px; color:var(--navy);}
+.brand-sub{font-size:11px; color:#8b8470; letter-spacing:.02em; margin-top:1px;}
+
+.searchbar{
+  flex:1; min-width:0; display:flex; align-items:center; gap:10px;
+  background:var(--paper); border:1.5px solid var(--line); border-radius:13px;
+  padding:11px 15px;
+  transition:border-color .18s ease, box-shadow .18s ease, background .18s ease;
+}
+.searchbar:focus-within{
+  border-color:var(--navy); background:#fff;
+  box-shadow:0 0 0 5px rgba(30,58,138,0.09);
+}
+.searchbar svg{flex-shrink:0; color:#a39c87;}
+.searchbar input{
+  flex:1; min-width:0; border:none; background:transparent; outline:none;
+  font-size:14.5px; color:var(--ink);
+}
+.searchbar input::placeholder{color:#a39c87;}
+.search-clear{
+  flex-shrink:0; border:none; background:#E7E2D6; color:#6b6452;
+  font-size:12px; font-weight:700; width:22px; height:22px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  transition:background .15s ease, transform .15s ease;
+}
+.search-clear:hover{background:#d8cfbc; transform:scale(1.08);}
+
+.nav-toggle{
+  flex-shrink:0; width:42px; height:42px; border-radius:11px;
+  border:1.5px solid var(--line); background:#fff; color:var(--navy);
+  display:none; align-items:center; justify-content:center;
+}
+
+.result-count{
+  font-size:12.5px; color:var(--ink-soft); padding:9px 2px 0;
+  font-weight:600;
+}
+
+/* ===================== MAIN GRID ===================== */
+.layout{display:flex; gap:42px; padding:32px 0 8px;}
+
+.side-nav{width:258px; flex-shrink:0;}
+.side-nav-sticky{position:sticky; top:96px;}
+.nav-eyebrow{
+  font-size:11px; font-weight:800; letter-spacing:.12em; text-transform:uppercase;
+  color:#a39c87; padding:0 12px; margin-bottom:10px; display:block;
+}
+.navlink{
+  display:flex; align-items:center; justify-content:space-between; gap:10px;
+  padding:11px 12px; border-radius:11px; font-size:13.5px; font-weight:700;
+  color:var(--ink-soft); margin-bottom:3px;
+  transition:background-color .16s ease, color .16s ease;
+}
+.navlink:hover{background:var(--paper);}
+.navlink.active{background:var(--navy); color:#fff;}
+.navcount{
+  font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700;
+  background:var(--paper-deep); color:#8b8470; border-radius:99px;
+  padding:2px 8px; flex-shrink:0;
+  transition:background .16s ease, color .16s ease;
+}
+.navlink.active .navcount{background:rgba(255,255,255,0.22); color:#fff;}
+
+.legend{
+  margin-top:22px; padding-top:18px; border-top:1px solid var(--line);
+  padding-left:12px;
+}
+.legend-item{display:flex; align-items:center; gap:9px; font-size:12.5px; color:var(--ink-soft); margin-bottom:9px; font-weight:600;}
+.legend-dot{width:9px; height:9px; border-radius:50%; flex-shrink:0;}
+
+/* mobile drawer */
+.mobile-nav{position:fixed; inset:0; z-index:100;}
+.mobile-nav-backdrop{position:absolute; inset:0; background:rgba(16,21,46,0.5); backdrop-filter:blur(2px);}
+.mobile-nav-panel{
+  position:absolute; top:0; left:0; bottom:0; width:84%; max-width:320px;
+  background:#fff; padding:22px; overflow-y:auto;
+  animation:slideIn .26s cubic-bezier(.16,1,.3,1);
+}
+@keyframes slideIn{from{transform:translateX(-100%);} to{transform:translateX(0);}}
+.mobile-nav-head{display:flex; align-items:center; justify-content:space-between; margin-bottom:20px;}
+.mobile-nav-title{font-weight:800; font-size:15px; color:var(--navy);}
+.mobile-nav-close{
+  width:34px; height:34px; border-radius:10px; border:1.5px solid var(--line);
+  background:#fff; display:flex; align-items:center; justify-content:center;
+}
+.mobile-navlink{
+  display:flex; align-items:center; justify-content:space-between; gap:10px;
+  padding:14px 13px; border-radius:11px; font-size:14px; font-weight:700;
+  color:var(--ink-soft); margin-bottom:4px;
+}
+.mobile-navlink:hover{background:var(--paper);}
+
+/* ===================== MAIN CONTENT ===================== */
+.main-col{flex:1; min-width:0;}
+
+.hero{margin-bottom:44px; max-width:680px;}
+.hero-eyebrow{
+  display:inline-flex; align-items:center; gap:7px;
+  font-size:11.5px; font-weight:800; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--navy); background:#EEF2FF; padding:6px 13px; border-radius:99px;
+  margin-bottom:18px;
+}
+.hero-eyebrow::before{content:""; width:6px; height:6px; border-radius:50%; background:var(--emerald);}
+.hero h1{
+  font-weight:900; font-size:clamp(28px, 4.6vw, 46px); line-height:1.12;
+  color:var(--navy); letter-spacing:-0.01em;
+}
+.hero p{font-size:15.5px; color:var(--ink-soft); margin-top:16px; line-height:1.65; max-width:560px;}
+
+.no-results{text-align:center; padding:70px 20px;}
+.no-results p:first-child{font-size:16px; font-weight:700; color:var(--ink-soft);}
+.no-results p:last-child{font-size:13.5px; color:#a39c87; margin-top:6px;}
+
+.cat-section{margin-bottom:56px; scroll-margin-top:92px;}
+.cat-head{display:flex; align-items:baseline; gap:11px; margin-bottom:5px;}
+.cat-head h2{font-weight:800; font-size:21px; color:var(--navy); letter-spacing:-0.01em;}
+.cat-sub{font-size:12.5px; color:#a39c87; margin-bottom:24px; font-weight:500;}
+
+.grid{
+  display:grid; grid-template-columns:repeat(auto-fill, minmax(290px, 1fr));
+  gap:18px;
+}
+
+/* ===================== TICKET CARD ===================== */
+.card{
+  position:relative;
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:22px 20px 18px;
+  display:flex; flex-direction:column;
+  opacity:0; transform:translateY(14px);
+  animation:riseIn .55s cubic-bezier(.16,1,.3,1) forwards;
+  transition:border-color .18s ease, box-shadow .22s ease, transform .18s ease;
+}
+.card:hover{
+  border-color:#c9c1ac;
+  box-shadow:0 14px 34px -14px rgba(16,30,77,0.22);
+  transform:translateY(-3px);
+}
+@keyframes riseIn{
+  to{opacity:1; transform:translateY(0);}
+}
+
+/* serrated ticket-tear top edge */
+.card::before{
+  content:"";
+  position:absolute; top:0; left:14px; right:14px; height:9px;
+  background:
+    radial-gradient(circle at 8px 0, transparent 7px, var(--white) 7.5px) repeat-x;
+  background-size:16px 16px;
+  background-position:top;
+}
+
+.card h2.title{
+  font-weight:700; font-size:15px; line-height:1.4; color:var(--ink);
+  margin-bottom:13px; padding-right:2px;
+}
+
+.doc-label{
+  font-size:10.5px; font-weight:800; letter-spacing:.08em; text-transform:uppercase;
+  color:#a39c87; margin-bottom:9px;
+}
+.doc-list{flex:1; margin-bottom:16px;}
+.doc-list li{
+  position:relative; padding-left:17px; font-size:13px; line-height:1.55;
+  color:var(--ink-soft); margin-bottom:7px;
+}
+.doc-list li::before{
+  content:""; position:absolute; left:0; top:7px; width:5px; height:5px;
+  border-radius:50%; background:var(--navy);
+}
+.doc-list li:last-child{margin-bottom:0;}
+
+.stub{
+  position:relative;
+  border-top:1.5px dashed #D8CFBC;
+  padding-top:14px;
+  display:flex; align-items:stretch; gap:12px;
+}
+.stub::before, .stub::after{
+  content:""; position:absolute; top:-7px;
+  width:13px; height:13px; background:var(--white);
+  border-radius:50%; border:1.5px solid #D8CFBC;
+  transition:background .18s ease;
+}
+.stub::before{left:-6px;}
+.stub::after{right:-6px;}
+
+.stub-col{flex:1; min-width:0;}
+.stub-label{
+  font-size:9.5px; font-weight:800; letter-spacing:.07em; text-transform:uppercase;
+  margin-bottom:4px;
+}
+.stub-value{font-weight:700; font-size:13px; line-height:1.4;}
+.stub-divider{width:1px; background:var(--line); flex-shrink:0;}
+
+.fee .stub-label, .fee .stub-value{color:var(--emerald);}
+.time .stub-label, .time .stub-value{color:var(--amber);}
+
+/* ===================== STATIC SECTIONS ===================== */
+.info-band{background:var(--paper); border-top:1px solid var(--line);}
+.info-grid{
+  display:grid; grid-template-columns:repeat(3, 1fr); gap:44px;
+  padding:64px 0;
+}
+.info-block h2{font-weight:800; font-size:15px; color:var(--navy); margin-bottom:13px;}
+.info-block p{font-size:13.5px; color:var(--ink-soft); line-height:1.7;}
+
+.contact-card{
+  background:#fff; border:1px solid var(--line); border-radius:14px; padding:17px;
+}
+.contact-label{font-size:11.5px; color:#a39c87; margin-bottom:4px;}
+.contact-number{font-family:'JetBrains Mono',monospace; font-weight:700; font-size:15px; color:var(--navy);}
+.contact-divider{border-top:1px solid var(--paper-deep); margin-top:13px; padding-top:13px;}
+.contact-input{
+  width:100%; font-size:13.5px; background:var(--paper); border:1px solid var(--line);
+  border-radius:9px; padding:10px 12px; color:#a39c87; margin-bottom:9px;
+}
+.contact-input:last-child{margin-bottom:0;}
+
+.site-footer{padding:22px 0; display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap;}
+.site-footer p{font-size:12px; color:#a39c87;}
+
+@media (max-width:1024px){
+  .layout{gap:0;}
+  .side-nav{display:none;}
+  .nav-toggle{display:flex;}
+}
+@media (max-width:860px){
+  .info-grid{grid-template-columns:1fr; gap:36px; padding:48px 0;}
+}
+@media (max-width:760px){
+  .grid{grid-template-columns:repeat(auto-fill, minmax(240px, 1fr));}
+}
+@media (max-width:640px){
+  .brand-sub{display:none;}
+  .hero p{font-size:14.5px;}
+  .cat-head h2{font-size:18px;}
+  .grid{grid-template-columns:1fr; gap:15px;}
+}
+@media (max-width:420px){
+  .header-inner{gap:10px;}
+  .brand-mark{width:36px; height:36px; font-size:14px;}
+  .brand-title{font-size:15px;}
+  .searchbar{padding:9px 12px;}
+  .nav-toggle{width:38px; height:38px;}
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  .card{animation:none; opacity:1; transform:none;}
+  *{transition-duration:.001ms !important; animation-duration:.001ms !important;}
+}
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">முதன்மை உள்ளடக்கத்திற்குச் செல்லவும்</a>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="brand">
+      <div class="brand-mark">இச</div>
+      <div class="brand-text">
+        <p class="brand-title">இ-சேவை வழிகாட்டி</p>
+        <p class="brand-sub">தமிழ்நாடு ஆவண பட்டியல் போர்டல்</p>
+      </div>
+    </div>
+
+    <div class="searchbar">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      <input id="searchInput" type="text" placeholder="சான்றிதழ் பெயரை தேடுங்கள்... (எ.கா: வருமான சான்றிதழ்)" autocomplete="off">
+      <button id="clearSearch" class="search-clear hide" aria-label="தேடலை அழிக்க">✕</button>
+    </div>
+
+    <button id="navToggle" class="nav-toggle" aria-label="பட்டியலைத் திற">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+  <div class="wrap"><p id="resultCount" class="result-count hide"></p></div>
+</header>
+
+<div class="wrap layout">
+  <!-- LEFT NAV (desktop) -->
+  <aside class="side-nav">
+    <nav class="side-nav-sticky" aria-label="வகைப்பாடு பட்டியல்">
+      <span class="nav-eyebrow">பிரிவுகள்</span>
+      <a href="#cat-1" class="navlink active">
+        <span>வருவாய் & மின்-மாவட்ட சான்றிதழ்கள்</span>
+        <span class="navcount">30</span>
+      </a>
+      <a href="#cat-2" class="navlink">
+        <span>இதர முக்கிய இ-சேவை வசதிகள்</span>
+        <span class="navcount">7</span>
+      </a>
+      <div class="legend">
+        <span class="nav-eyebrow" style="padding-left:0;">குறியீடு</span>
+        <p class="legend-item"><span class="legend-dot" style="background:var(--emerald)"></span> அரசு கட்டணம்</p>
+        <p class="legend-item"><span class="legend-dot" style="background:var(--amber)"></span> செயலாக்க நேரம்</p>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- mobile nav drawer -->
+  <div id="mobileNav" class="mobile-nav hide">
+    <div id="mobileNavBackdrop" class="mobile-nav-backdrop"></div>
+    <nav class="mobile-nav-panel" aria-label="வகைப்பாடு பட்டியல் - மொபைல்">
+      <div class="mobile-nav-head">
+        <p class="mobile-nav-title">பிரிவுகள்</p>
+        <button id="mobileNavClose" class="mobile-nav-close" aria-label="மூடு">✕</button>
+      </div>
+      <a href="#cat-1" class="mobile-navlink">
+        <span>வருவாய் & மின்-மாவட்ட சான்றிதழ்கள்</span>
+        <span class="navcount">30</span>
+      </a>
+      <a href="#cat-2" class="mobile-navlink">
+        <span>இதர முக்கிய இ-சேவை வசதிகள்</span>
+        <span class="navcount">7</span>
+      </a>
+    </nav>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main id="main" class="main-col">
+    <div class="hero">
+      <span class="hero-eyebrow">37 சேவைகள் · புதுப்பிக்கப்பட்டது 2026</span>
+      <h1>தமிழ்நாடு இ-சேவை — ஆவணப் பட்டியல் & கட்டண வழிகாட்டி</h1>
+      <p>37 சான்றிதழ்கள் & சேவைகளுக்கான தேவையான ஆவணங்கள், அரசு கட்டணம், செயலாக்க நேரம் ஆகியவை ஒரே இடத்தில். தேடுபெட்டியில் சான்றிதழ் பெயரை தட்டச்சு செய்யவும்.</p>
+    </div>
+
+    <div id="noResults" class="no-results hide">
+      <p>தேடலுக்கு பொருந்தும் சான்றிதழ் இல்லை</p>
+      <p>வேறு சொல்லில் முயற்சிக்கவும், எ.கா: "வருமானம்" அல்லது "பட்டா"</p>
+    </div>
+
+    <section id="cat-1" class="cat-section">
+      <div class="cat-head"><h2>வருவாய் மற்றும் மின்-மாவட்ட சான்றிதழ்கள்</h2></div>
+      <p class="cat-sub">Revenue &amp; e-District Certificates &middot; குறிப்பிடப்படாத பட்சத்தில் அரசு கட்டணம் ₹60</p>
+      <div id="grid-1" class="grid"></div>
+    </section>
+
+    <section id="cat-2" class="cat-section">
+      <div class="cat-head"><h2>இ-சேவை மையங்களில் கிடைக்கும் இதர முக்கிய சேவைகள்</h2></div>
+      <p class="cat-sub">Other Vital e-Sevai Utilities &middot; இவை சுயாதீன சான்றிதழ்கள் அல்ல — விண்ணப்ப/பயன்பாட்டு சேவைகள்</p>
+      <div id="grid-2" class="grid"></div>
+    </section>
+  </main>
+</div>
+
+<section class="info-band">
+  <div class="wrap info-grid">
+    <div class="info-block">
+      <h2>எங்களைப் பற்றி</h2>
+      <p>இது ஒரு தனியார் கல்வி நோக்கிலான தகவல் தளம். தமிழ்நாட்டு மக்கள் இ-சேவை மற்றும் மின்-மாவட்ட மையங்களில் சான்றிதழ்களுக்கு விண்ணப்பிக்கும் போது தேவையான ஆவணங்கள், கட்டணம், நேரம் ஆகியவற்றை எளிதாக புரிந்துகொள்ள உதவும் நோக்கில் உருவாக்கப்பட்டது. இது அரசு இணையதளம் அல்ல.</p>
+    </div>
+    <div class="info-block">
+      <h2>தனியுரிமைக் கொள்கை</h2>
+      <p>இந்த தளம் பயனர்களின் தனிப்பட்ட தரவு, விண்ணப்பப் பதிவுகள், அடையாள ஆவணங்கள் எதையும் சேகரிக்காது, சேமிக்காது. இங்குள்ள தகவல்கள் பொதுவான வழிகாட்டுதலுக்கு மட்டுமே; உண்மையான விண்ணப்பத்திற்கு உங்கள் அருகிலுள்ள இ-சேவை மையத்தைத் தொடர்பு கொள்ளவும்.</p>
+    </div>
+    <div class="info-block">
+      <h2>தொடர்பு கொள்ள</h2>
+      <div class="contact-card">
+        <p class="contact-label">அரசு உதவிக்கான மத்திய எண் (Tamil Nadu e-Sevai Helpline)</p>
+        <p class="contact-number">1800-425-1333</p>
+        <div class="contact-divider">
+          <input type="text" disabled placeholder="உங்கள் பெயர்" class="contact-input">
+          <input type="text" disabled placeholder="உங்கள் கேள்வி" class="contact-input">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap site-footer">
+  <p>© 2026 இ-சேவை வழிகாட்டி போர்டல். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.</p>
+  <p>இது அரசு அதிகாரப்பூர்வ தளம் அல்ல &middot; தனியார் தகவல் வழிகாட்டி</p>
+</footer>
+
+<script>
+const DATA = [
+{cat:1, id:1, title:"Community Certificate (சாதி சான்றிதழ்)", docs:["புகைப்படம்","முகவரி சான்று (Aadhaar/Ration card)","பெற்றோரின் சாதி சான்றிதழ்","பள்ளி மாற்றுச் சான்றிதழ் (TC)","சுயவிவர வாக்குமூலம்"], fee:"₹60", time:"15 நாட்கள்"},
+{cat:1, id:2, title:"Nativity Certificate (இருப்பிடச் சான்றிதழ்)", docs:["புகைப்படம்","முகவரி சான்று","பிறப்புச் சான்றிதழ் அல்லது பள்ளி மாற்றுச் சான்றிதழ்","5 ஆண்டுகள் தொடர்ச்சியாக வசித்ததற்கான சான்று","சுயவிவர வாக்குமூலம்"], fee:"₹60", time:"15 நாட்கள்"},
+{cat:1, id:3, title:"Income Certificate (வருமான சான்றிதழ்)", docs:["புகைப்படம்","ஆதார் மற்றும் குடும்ப அட்டை","சம்பள சான்றிதழ் (இருப்பின்)","சுயவிவர வாக்குமூலம்"], fee:"₹60", time:"7 முதல் 15 நாட்கள்"},
+{cat:1, id:4, title:"First Graduate Certificate (முதல் தலைமுறை பட்டதாரி சான்றிதழ்)", docs:["புகைப்படம்","ரேஷன் கார்டு","விண்ணப்பதாரர் மாற்றுச் சான்றிதழ் (TC) மற்றும் தற்போதைய கல்விச் சான்று","பெற்றோரின் பள்ளி மாற்றுச் சான்றிதழ் (படிப்பு விவரம் தெரியாவிடின் சுய வாக்குமூலம்)","குடும்ப உறுப்பினர்களின் சுயவிவர வாக்குமூலம்"], fee:"₹60", time:"15 முதல் 30 நாட்கள்"},
+{cat:1, id:5, title:"Deserted Woman Certificate (கைவிடப்பட்ட பெண் சான்றிதழ்)", docs:["புகைப்படம்","கணவனால் கைவிடப்பட்டு குறைந்தது 5 ஆண்டுகள் தனித்து வாழ்வதற்கான சான்று","வட்டாட்சியர் அல்லது உள்ளூர் கிராம நிர்வாக அலுவலர் (VAO) அறிக்கை","முகவரி சான்று"], fee:"₹60", time:"15 முதல் 30 நாட்கள்"},
+{cat:1, id:6, title:"Agricultural Income Certificate (விவசாய வருமான சான்றிதழ்)", docs:["புகைப்படம்","நிலத்தின் பட்டா/சிட்டா நகல்","கிராம நிர்வாக அலுவலர் (VAO) வழங்கிய விவசாய வருமான அறிக்கை","முகவரி சான்று"], fee:"₹60", time:"15 நாட்கள்"},
+{cat:1, id:7, title:"Family Migration Certificate (குடும்ப இடப்பெயர்வு சான்றிதழ்)", docs:["புகைப்படம்","குடும்ப அட்டை","பழைய மற்றும் புதிய முகவரி சான்றுகள்","இடப்பெயர்வுக்கான அதிகாரப்பூர்வ காரணம் (வேலை/கல்விக்கான ஆவணங்கள்)"], fee:"₹60", time:"15 நாட்கள்"},
+{cat:1, id:8, title:"Unemployment Certificate (வேலையின்மை சான்றிதழ்)", docs:["புகைப்படம்","கல்வி தகுதி சான்றிதழ்கள்","வேலைவாய்ப்பு அலுவலக பதிவு அட்டை (இருப்பின்)","சுயவிவர வாக்குமூலம்"], fee:"₹60", time:"15 நாட்கள்"},
+{cat:1, id:9, title:"Widow Certificate (விதவை சான்றிதழ்)", docs:["புகைப்படம்","கணவரின் இறப்புச் சான்றிதழ்","திருமணப் பதிவுச் சான்று அல்லது சட்டப்பூர்வ வாரிசு சான்றிதழ்","விண்ணப்பதாரரின் முகவரி சான்று"], fee:"₹60", time:"15 நாட்கள்"},
+{cat:1, id:10, title:"Legal Heir Certificate (வாரிசு சான்றிதழ்)", docs:["இறந்தவரின் இறப்புச் சான்றிதழ்","இறந்தவரின் முகவரி சான்று","அனைத்து வாரிசுதாரர்களின் பிறப்பு/பள்ளி மாற்றுச் சான்றிதழ்கள் (TC)","திருமணப் பதிவுச் சான்று","அனைத்து வாரிசுகளையும் உள்ளடக்கிய சுயவிவர வாக்குமூலம்"], fee:"₹60", time:"15 முதல் 30 நாட்கள்"},
+{cat:1, id:11, title:"Inter-Caste Marriage Certificate (கலப்பு திருமண சான்றிதழ்)", docs:["தம்பதியரின் புகைப்படங்கள்","கணவன் மற்றும் மனைவியின் தனித்தனி சாதி சான்றிதழ்கள்","திருமணப் பதிவுச் சான்றிதழ்","வயது சான்று"], fee:"₹60", time:"15 முதல் 30 நாட்கள்"},
+{cat:1, id:12, title:"Certificate for Loss of Educational Records due to Disasters (பேரிடரால் கல்வி ஆவணங்களை இழந்ததற்கான சான்றிதழ்)", docs:["புகைப்படம்","பேரிடர் பாதிப்பு குறித்த உள்ளூர் கிராம நிர்வாக அலுவலர் (VAO) அல்லது காவல் துறை அறிக்கை","இழந்த கல்வி ஆவணங்களின் விவரங்கள்"], fee:"₹60", time:"15 நாட்கள்"},
+{cat:1, id:13, title:"No Male Child Certificate (ஆண் வாரிசு இல்லை என்பதற்கான சான்றிதழ்)", docs:["புகைப்படம்","குடும்ப அட்டை","அனைத்து பெண் பிள்ளைகளின் பிறப்பு/பள்ளி சான்றிதழ்கள்","குடும்பக் கட்டுப்பாடு செய்ததற்கான சான்று (பொருந்தினால்)","சுயவிவர வாக்குமூலம்"], fee:"₹60", time:"15 முதல் 30 நாட்கள்"},
+{cat:1, id:14, title:"OBC Certificate (இதர பிற்படுத்தப்பட்ட வகுப்பினர் சான்றிதழ்)", docs:["புகைப்படம்","முகவரி சான்று","மாநில அரசு வழங்கிய சாதி சான்றிதழ்","வருமான சான்றிதழ்","மத்திய அரசு வடிவமைப்புக்கு உட்பட்ட சுயவிவர வாக்குமூலம்"], fee:"₹60", time:"15 நாட்கள்"},
+{cat:1, id:15, title:"Residence Certificate (இருப்பிடச் சான்றிதழ்)", docs:["புகைப்படம்","தற்போதைய தங்குமிடத்திற்கான சான்று (வாடகை ஒப்பந்தம்/மின்சார கட்டண ரசீது)","ஆதார் அட்டை","சுயவிவர வாக்குமூலம்"], fee:"₹60", time:"15 நாட்கள்"},
+{cat:1, id:16, title:"Small / Marginal Farmer Certificate (சிறு / குறு விவசாயி சான்றிதழ்)", docs:["புகைப்படம்","நிலத்தின் பட்டா, சிட்டா, அடங்கல் நகல்கள்","கிராம நிர்வாக அலுவலரின் (VAO) நில அளவு மற்றும் உடைமை குறித்த அறிக்கை"], fee:"₹60", time:"15 நாட்கள்"},
+{cat:1, id:17, title:"Solvency Certificate (சொத்து மதிப்புச் சான்றிதழ்)", docs:["புகைப்படம்","சொத்து ஆவணங்கள் (பத்திர நகல்)","நடப்பு நிதியாண்டின் வில்லங்கச் சான்றிதழ் (EC)","சொத்து மதிப்பு மதிப்பீட்டு அறிக்கை","நில வருவாய் ரசீதுகள்"], fee:"₹60", time:"15 முதல் 30 நாட்கள்"},
+{cat:1, id:18, title:"Unmarried Certificate (திருமணமாகாததற்கான சான்றிதழ்)", docs:["புகைப்படம்","வயது சான்று (பள்ளி சான்றிதழ்/பிறப்புச் சான்றிதழ்)","முகவரி சான்று","கிராம நிர்வாக அலுவலர் (VAO) சான்றளித்த அறிக்கை மற்றும் சுயவிவர வாக்குமூலம்"], fee:"₹60", time:"15 நாட்கள்"},
+{cat:1, id:19, title:"Destitute Widow Certificate (ஆதரவற்ற விதவை சான்றிதழ்)", docs:["புகைப்படம்","கணவரின் இறப்புச் சான்றிதழ்","மிகக் குறைந்த வருமானத்திற்கான சான்று (வட்டாட்சியர் அறிக்கை)","சொத்துக்கள் ஏதுமில்லை என்பதற்கான VAO சான்று"], fee:"₹60", time:"15 முதல் 30 நாட்கள்"},
+{cat:1, id:20, title:"EWS Income & Asset Certificate (பொருளாதாரத்தில் நலிவடைந்த பிரிவினருக்கான சான்றிதழ்)", docs:["புகைப்படம்","குடும்பத்தின் அனைத்து உறுப்பினர்களின் பான் (PAN) மற்றும் ஆதார் அட்டை","அனைத்து ஆதாரங்களின் மூலமான மொத்த குடும்ப வருமானச் சான்று","நிலம்/வீட்டு சொத்து ஆவணங்கள்"], fee:"₹60", time:"15 முதல் 30 நாட்கள்"},
+{cat:1, id:21, title:"Jain Religious Minority Certificate (சைன மத சிறுபான்மையினர் சான்றிதழ்)", docs:["புகைப்படம்","பள்ளி மாற்றுச் சான்றிதழ் (மத விவரத்துடன்)","சமூகம் சார்ந்த மத அமைப்பின் சான்று","சுயவிவர வாக்குமூலம்"], fee:"₹60", time:"15 நாட்கள்"},
+{cat:1, id:22, title:"BC Muslim Certificate for Converts to Islam (இஸ்லாமிற்கு மாறியவர்களுக்கான பிசி முஸ்லிம் சான்றிதழ்)", docs:["புகைப்படம்","முறைப்படியான மதமாற்றப் பதிவுச் சான்றிதழ் (அரசிதழ்/Gazette நகல்)","புதிய முகவரி மற்றும் அடையாளச் சான்று","சுயவிவர வாக்குமூலம்"], fee:"₹60", time:"15 முதல் 30 நாட்கள்"},
+{cat:1, id:23, title:"Birth Certificate print service (பிறப்புச் சான்றிதழ் அச்சு சேவை)", docs:["பதிவு எண் அல்லது குழந்தையின் பிறப்பு விவரங்கள் (தேதி, பெற்றோர் பெயர், பிறந்த மருத்துவமனை)"], fee:"₹60", time:"உடனடியாக அச்சிடப்படும்"},
+{cat:1, id:24, title:"Death Certificate print service (இறப்புச் சான்றிதழ் அச்சு சேவை)", docs:["பதிவு எண் அல்லது இறந்தவரின் விவரங்கள் (தேதி, இடம், பெற்றோர்/துணைவர் பெயர்)"], fee:"₹60", time:"உடனடியாக அச்சிடப்படும்"},
+{cat:1, id:25, title:"Temporary Crackers License Certificate (தற்காலிக பட்டாசு உரிமம்)", docs:["கடை அமையவிருக்கும் இடத்தின் வரைபடம்","உரிமையாளர் அடையாளச் சான்று","தீயணைப்பு மற்றும் காவல் துறை தடையில்லா சான்றிதழ் (NOC)","கட்டிடத்தின் தகுதிச் சான்று"], fee:"உரிமக் கட்டணம் மாறுபடும் + ₹60", time:"30 நாட்கள்"},
+{cat:1, id:26, title:"Pawn Broker License Certificate (அடகு கடை உரிமம்)", docs:["அடையாள மற்றும் முகவரி சான்று","கடையின் இருப்பிட ஆவணங்கள் (வாடகை/சொத்து பத்திரம்)","சொத்து மதிப்புச் சான்றிதழ்","காவல் துறை சரிபார்ப்பு அறிக்கை"], fee:"உரிமக் கட்டணம் + ₹60", time:"30–45 நாட்கள்"},
+{cat:1, id:27, title:"Money Lender License Certificate (கடன் வழங்குநர் உரிமம்)", docs:["விண்ணப்பதாரரின் அடையாளச் சான்று","வங்கி கணக்கு விவரங்கள்","சொத்து மதிப்பு மற்றும் Solvency சான்றிதழ்","ஒழுங்கு நடவடிக்கை ஏதுமில்லை என்பதற்கான வாக்குமூலம்"], fee:"உரிமக் கட்டணம் + ₹60", time:"30–45 நாட்கள்"},
+{cat:1, id:28, title:"Cinema Theatre Form-C Renewal License (திரையரங்கு படிவம்-சி புதுப்பித்தல்)", docs:["நடப்பு படிவம்-சி நகல்","பொதுப்பணித்துறை (PWD) கட்டிட தகுதிச் சான்று","மின்சார வாரிய சான்றிதழ்","தீயணைப்பு மற்றும் சுகாதாரத் துறை தடையில்லா சான்றிதழ்கள்"], fee:"இருக்கை எண்ணிக்கை அடிப்படையில் + ₹60", time:"30–60 நாட்கள்"},
+{cat:1, id:29, title:"Permanent Cracker License Concurrence Certificate (நிரந்தர பட்டாசு உரிம ஒப்புதல் சான்றிதழ்)", docs:["வெடிபொருள் கட்டுப்பாட்டுத் துறை உரிமம்","மாவட்ட ஆட்சியர் மற்றும் தீயணைப்புத் துறை ஒப்புதல் கடிதங்கள்","பாதுகாப்பு வரைபடங்கள்","கட்டிட உறுதிச்சான்று"], fee:"குறிப்பிட்ட உரிமக் கட்டணம் + ₹60", time:"45–90 நாட்கள்"},
+{cat:1, id:30, title:"Wetland Development Permission Certificate/NOC (நன்செய் நில மேம்பாட்டு அனுமதி / தடையில்லா சான்றிதழ்)", docs:["நிலத்தின் பட்டா மற்றும் அசல் கிரயப் பத்திரம்","எஃப்.எம்.பி (FMP) வரைபடம்","சிட்டா மற்றும் அடங்கல் நகல்","வேளாண் துறை மற்றும் வருவாய்த்துறை கூட்டு ஆய்வு அறிக்கை"], fee:"பரப்பளவைப் பொறுத்து + ₹60", time:"45–60 நாட்கள்"},
+
+{cat:2, id:31, title:"Differently Abled ID Card Services (மாற்றுத்திறனாளிகளுக்கான அடையாள அட்டை சேவைகள்)", docs:["மருத்துவக் குழு வழங்கிய குறைபாட்டிற்கான சான்றிதழ் (Disability Certificate)","புகைப்படம் (முழு உருவம் தெரியும்படி)","ஆதார் அட்டை"], fee:"₹60", time:"30 நாட்கள்"},
+{cat:2, id:32, title:"Old Age Pension / General Pension Services (முதியோர் மற்றும் இதர ஓய்வூதியத் திட்டங்கள்)", docs:["வயது சான்று (ஆதார்/பள்ளி சான்றிதழ்)","வறுமைக் கோட்டிற்கு கீழ் உள்ளதற்கான சான்று","வங்கி கணக்கு புத்தக நகல்","புகைப்படம்","வாரிசுகள் யாரும் ஆதரிக்கவில்லை என்பதற்கான VAO சான்று"], fee:"இலவசம் / ₹60 இ-சேவை கட்டணம்", time:"30–45 நாட்கள்"},
+{cat:2, id:33, title:"Patta Transfer Services (பட்டா மாறுதல் சேவைகள் - முழு மற்றும் கூட்டு பட்டா)", docs:["பதிவு செய்யப்பட்ட கிரயப் பத்திரம் (Sale Deed)","வில்லங்கச் சான்றிதழ் (EC)","நிலத்தின் பழைய பட்டா நகல்","ஆதார் அட்டை"], fee:"₹60", time:"15–30 நாட்கள்"},
+{cat:2, id:34, title:"Chitta / Adangal Extracts Download (சிட்டா / அடங்கல் நகல் பதிவிறக்கம்)", docs:["மாவட்டத்தின் பெயர், வட்டம், கிராமத்தின் பெயர்","சர்வே எண் (Survey Number) அல்லது பட்டா எண்"], fee:"₹20 + ₹5/₹10 இ-சேவை", time:"உடனடியாக பதிவிறக்கலாம்"},
+{cat:2, id:35, title:"Ration Card Services (குடும்ப அட்டை சேவைகள் - புதிய அட்டை, முகவரி மாற்றம், பெயர் சேர்த்தல்/நீக்கம்)", docs:["பெயர் சேர்க்க: பிறப்புச் சான்றிதழ்","பெயர் நீக்க: திருமணப் பத்திரிக்கை அல்லது இறப்புச் சான்றிதழ்","முகவரி மாற்ற: புதிய முகவரியின் கேஸ் பில்/மின்சார பில்","பழைய ரேஷன் கார்டு நகல்"], fee:"₹20 முதல் ₹60 வரை", time:"15–30 நாட்கள்"},
+{cat:2, id:36, title:"Driving Licence & Transport Services (ஓட்டுநர் உரிமம் மற்றும் போக்குவரத்து சேவைகள்)", docs:["எல்.எல்.ஆர் (LLR) நகல்","வயது சான்று","முகவரி சான்று","மருத்துவ தகுதிச் சான்று (படிவம் 1A — 40 வயதிற்கு மேற்பட்டோருக்கு)","புகைப்படம்"], fee:"RTO கட்டணம் + இ-சேவை கட்டணம்", time:"தேர்வு முடிந்த 7 நாட்களில்"},
+{cat:2, id:37, title:"Electricity Board EB Bill Payment (மின்சார கட்டணம் செலுத்துதல்)", docs:["நுகர்வோர் எண் (Consumer Number)","முந்தைய மின் கட்டண ரசீது நகல்"], fee:"கட்டணத் தொகை + கையாளுதல் கட்டணம்", time:"உடனடியாகப் புதுப்பிக்கப்படும்"},
+];
+
+const grid1 = document.getElementById('grid-1');
+const grid2 = document.getElementById('grid-2');
+
+function cardHTML(item, idx){
+  const docsHTML = item.docs.map(d => `<li>${d}</li>`).join('');
+  const delay = (idx % 9) * 0.045;
+  return `
+  <article class="card" style="animation-delay:${delay}s" data-search="${item.title.toLowerCase()}">
+    <h2 class="title">${item.title}</h2>
+    <p class="doc-label">தேவையான ஆவணங்கள்</p>
+    <ul class="doc-list">${docsHTML}</ul>
+    <div class="stub">
+      <div class="stub-col fee">
+        <p class="stub-label">அரசு கட்டணம்</p>
+        <p class="stub-value font-mono">${item.fee}</p>
+      </div>
+      <div class="stub-divider"></div>
+      <div class="stub-col time">
+        <p class="stub-label">செயலாக்க நேரம்</p>
+        <p class="stub-value font-mono">${item.time}</p>
+      </div>
+    </div>
+  </article>`;
+}
+
+let i1 = 0, i2 = 0;
+DATA.forEach(item => {
+  if(item.cat === 1){ grid1.insertAdjacentHTML('beforeend', cardHTML(item, i1)); i1++; }
+  else { grid2.insertAdjacentHTML('beforeend', cardHTML(item, i2)); i2++; }
+});
+
+// ---- Search ----
+const searchInput = document.getElementById('searchInput');
+const clearBtn = document.getElementById('clearSearch');
+const resultCount = document.getElementById('resultCount');
+const noResults = document.getElementById('noResults');
+const allCards = Array.from(document.querySelectorAll('.card'));
+const sections = [document.getElementById('cat-1'), document.getElementById('cat-2')];
+
+function runSearch(){
+  const q = searchInput.value.trim().toLowerCase();
+  clearBtn.classList.toggle('hide', q.length === 0);
+
+  if(!q){
+    allCards.forEach(c => c.classList.remove('hide'));
+    sections.forEach(s => s.classList.remove('hide'));
+    resultCount.classList.add('hide');
+    noResults.classList.add('hide');
+    return;
+  }
+
+  let visibleCount = 0;
+  allCards.forEach(c => {
+    const match = c.dataset.search.includes(q);
+    c.classList.toggle('hide', !match);
+    if(match) visibleCount++;
+  });
+
+  sections.forEach(s => {
+    const hasVisible = s.querySelectorAll('.card:not(.hide)').length > 0;
+    s.classList.toggle('hide', !hasVisible);
+  });
+
+  resultCount.textContent = `${visibleCount} சேவை(கள்) கிடைத்தது`;
+  resultCount.classList.remove('hide');
+  noResults.classList.toggle('hide', visibleCount !== 0);
+}
+
+searchInput.addEventListener('input', runSearch);
+clearBtn.addEventListener('click', () => { searchInput.value=''; runSearch(); searchInput.focus(); });
+
+// ---- Active nav link on scroll ----
+const navLinks = Array.from(document.querySelectorAll('.navlink'));
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      const id = entry.target.id;
+      navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#'+id));
+    }
+  });
+}, { rootMargin: '-100px 0px -70% 0px' });
+sections.forEach(s => observer.observe(s));
+
+// ---- Mobile nav drawer ----
+const mobileNav = document.getElementById('mobileNav');
+const navToggle = document.getElementById('navToggle');
+const mobileNavClose = document.getElementById('mobileNavClose');
+const mobileNavBackdrop = document.getElementById('mobileNavBackdrop');
+
+function openMobileNav(){ mobileNav.classList.remove('hide'); document.body.style.overflow='hidden'; }
+function closeMobileNav(){ mobileNav.classList.add('hide'); document.body.style.overflow=''; }
+
+navToggle.addEventListener('click', openMobileNav);
+mobileNavClose.addEventListener('click', closeMobileNav);
+mobileNavBackdrop.addEventListener('click', closeMobileNav);
+document.querySelectorAll('.mobile-navlink').forEach(l => l.addEventListener('click', closeMobileNav));
+</script>
+</body>
+</html>
